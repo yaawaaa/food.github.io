@@ -16,55 +16,17 @@ h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #ffffff;
-    text-align: center;
 }
 
 .chat-container {
     background-color: #1e1e1e;
     border: 1px solid #333;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 16px;
-    width: 90vw;
-    height: 80vh;
-    max-width: 720px;
-    max-height: 900px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-}
-
-zapier-interfaces-chatbot-embed {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* Phones */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    .chat-container {
-        width: 95vw;
-        height: 70vh;
-        padding: 12px;
-    }
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-    .chat-container {
-        width: 90vw;
-        height: 75vh;
-    }
-}
-
-/* Laptops and larger screens */
-@media (min-width: 769px) {
-    .chat-container {
-        width: 720px;
-        height: 80vh;
-    }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
