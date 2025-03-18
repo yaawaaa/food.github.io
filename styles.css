@@ -16,6 +16,7 @@ h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #ffffff;
+    text-align: center;
 }
 
 .chat-container {
@@ -23,10 +24,40 @@ h1 {
     border: 1px solid #333;
     border-radius: 12px;
     padding: 16px;
-    width: 720px;
-    height: 1280px;
+    width: 90%; /* Take 90% of the screen width */
+    max-width: 720px; /* Limit max width for laptops */
+    height: 80vh; /* Take 80% of the screen height */
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .chat-container {
+        width: 100%; /* Use full width on small screens */
+        height: 70vh; /* Slightly shorter height for better mobile experience */
+        padding: 12px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 95%; /* Slightly wider on tablets */
+        height: 75vh;
+    }
+}
+
+/* Laptops */
+@media (min-width: 769px) {
+    .chat-container {
+        width: 720px; /* Fixed width for larger screens */
+        height: 80vh;
+    }
 }
