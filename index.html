@@ -1,108 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat with ChatGPT</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 20px;
-        }
-        #chat-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow-y: auto;
-            height: 400px;
-        }
-        .message {
-            margin-bottom: 10px;
-        }
-        .user {
-            color: blue;
-            text-align: right;
-        }
-        .bot {
-            color: green;
-            text-align: left;
-        }
-        #input-box {
-            width: calc(100% - 80px);
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #send-btn {
-            padding: 10px 20px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+
+    .chat-container {
+      width: 400px;
+      height: 600px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Chat with ChatGPT</h2>
-<div id="chat-container"></div>
-<input type="text" id="input-box" placeholder="Type a message..." />
-<button id="send-btn">Send</button>
-
-<script>
-const apiKey = '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'; // Replace with your OpenAI API key
-const chatContainer = document.getElementById('chat-container');
-const inputBox = document.getElementById('input-box');
-const sendBtn = document.getElementById('send-btn');
-
-sendBtn.addEventListener('click', async () => {
-    const userMessage = inputBox.value.trim();
-    if (userMessage) {
-        displayMessage(userMessage, 'user');
-        inputBox.value = '';
-
-        const response = await getGPTResponse(userMessage);
-        displayMessage(response, 'bot');
-    }
-});
-
-function displayMessage(message, type) {
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message', type);
-    messageElement.textContent = message;
-    chatContainer.appendChild(messageElement);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
-}
-
-async function getGPTResponse(message) {
-    const endpoint = 'https://api.openai.com/v1/chat/completions';
-
-    const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-            model: 'gpt-3.5-turbo',
-            messages: [{ role: 'user', content: message }]
-        })
-    });
-
-    const data = await response.json();
-    return data.choices[0].message.content;
-}
-    </script>
-    <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-<zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cm8dwpwk1005ebgpe2rsfq3b4'></zapier-interfaces-chatbot-embed>
-</script>
+<div class="chat-container">
+  <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+  <zapier-interfaces-chatbot-embed
+    is-popup="false"
+    chatbot-id="cm8dwpwk1005ebgpe2rsfq3b4"
+    height="600px"
+    width="400px">
+  </zapier-interfaces-chatbot-embed>
+</div>
 
 </body>
 </html>
