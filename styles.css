@@ -24,14 +24,14 @@ h1 {
     border: 1px solid #333;
     border-radius: 12px;
     padding: 16px;
-    width: 90%; /* Take 90% of the screen width */
-    max-width: 720px; /* Limit max width for laptops */
-    height: 80vh; /* Take 80% of the screen height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 90vw; /* 90% of viewport width */
+    height: 80vh; /* 80% of viewport height */
+    max-width: 720px;
+    max-height: 900px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
+
+/* Responsive styles */
 
 /* Phones */
 @media (max-width: 480px) {
@@ -40,8 +40,8 @@ h1 {
     }
 
     .chat-container {
-        width: 100%; /* Use full width on small screens */
-        height: 70vh; /* Slightly shorter height for better mobile experience */
+        width: 95vw;
+        height: 70vh;
         padding: 12px;
     }
 }
@@ -49,15 +49,15 @@ h1 {
 /* Tablets */
 @media (max-width: 768px) {
     .chat-container {
-        width: 95%; /* Slightly wider on tablets */
+        width: 90vw;
         height: 75vh;
     }
 }
 
-/* Laptops */
+/* Laptops and larger screens */
 @media (min-width: 769px) {
     .chat-container {
-        width: 720px; /* Fixed width for larger screens */
+        width: 720px;
         height: 80vh;
     }
 }
